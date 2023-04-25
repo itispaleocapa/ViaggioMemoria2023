@@ -1,16 +1,16 @@
 body {
     margin: 0;
     padding: 0;
-    background-attachment: fixed;
+    background: linear-gradient(to top, #0D2C54, #F6511D);
 
-        background-image: url("../media/img/Viaggio-a-Mauthausen-1-scaled.jpg");
-        background-color: #cccccc;
+    background-attachment: fixed;
 }
 
 header {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    background-color: #00A6ED;
 }
 
 header h1 {
@@ -23,6 +23,7 @@ header nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    background-color: #7FB800;
 }
 
 header nav a {
