@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Gallery</title>
+ <style>
+    #selected_img
+    {
+        display: flex;
+        justify-content: center;
+    align-items: center;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        /*max-width: 800px;*/
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+    #selected_img img
+    {
+        width: 100%;
+        height: auto;
+    }
+    #image_list li
+    {
+        width: 10%;
+        display: inline-block;
+        max-height: 100px;
+        padding:0;
+    }
+    #image_list li img
+    {
+        width: 100%;
+        height: auto;
+    } 
+    ul
+    {
+        padding:0;
+    } 
+ </style>
+</head>
+<body>
+<ul id="image_list">
+<li><img src="media/gr/Il.Viaggio.di.Roberto-101.png" alt="Copertina 1"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-102.png" alt="Copertina 2"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-105.png" alt="Tavola 001"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-106.png" alt="Tavola 002"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-107.png" alt="Tavola 003"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-108.png" alt="Tavola 004"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-109.png" alt="Tavola 005"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-110.png" alt="Tavola 006"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-111.png" alt="Tavola 007"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-112.png" alt="Tavola 008"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-113.png" alt="Tavola 009"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-114.png" alt="Tavola 010"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-115.png" alt="Tavola 011"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-116.png" alt="Tavola 012"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-117.png" alt="Tavola 013"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-118.png" alt="Tavola 014"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-119.png" alt="Tavola 015"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-120.png" alt="Tavola 016"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-121.png" alt="Tavola 017"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-122.png" alt="Tavola 018"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-123.png" alt="Tavola 019"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-124.png" alt="Tavola 020"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-125.png" alt="Tavola 021"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-126.png" alt="Tavola 022"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-127.png" alt="Tavola 023"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-128.png" alt="Tavola 024"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-129.png" alt="Tavola 025"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-130.png" alt="Tavola 026"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-131.png" alt="Tavola 027"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-132.png" alt="Tavola 028"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-133.png" alt="Tavola 029"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-134.png" alt="Tavola 030"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-135.png" alt="Tavola 031"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-136.png" alt="Tavola 032"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-137.png" alt="Tavola 033"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-138.png" alt="Tavola 034"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-139.png" alt="Tavola 035"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-140.png" alt="Tavola 036"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-141.png" alt="Tavola 037"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-142.png" alt="Tavola 038"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-143.png" alt="Tavola 039"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-144.png" alt="Tavola 040"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-145.png" alt="Tavola 041"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-146.png" alt="Tavola 042"></li>
+<li><img src="media/gr/Il.Viaggio.di.Roberto-147.png" alt="Fine"></li>
+</ul>
+<div id="selected_img"></div>
+<script>
+    var selectedImg = document.getElementById('selected_img');
+    var images = document.getElementById('image_list').getElementsByTagName('li');
+    selectedImg.addEventListener('click', hideImage);
+    for (i = 0; i < images.length; i++)
+    {
+        images[i].addEventListener('click', showImage);
+    }
+    function showImage()
+    {
+        selectedImg.innerHTML = this.innerHTML;
+        selectedImg.style.display = "flex";
+    }
+    function hideImage()
+    {
+        selectedImg.style.display = "none";
+        selectedImg.innerHTML = "";
+    }
+</script>
+</body>
+</html>
