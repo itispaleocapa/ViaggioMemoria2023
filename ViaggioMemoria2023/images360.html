@@ -5,9 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>VIAGGIO AUSTRIA | IMMAGINI 360</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
-        <link rel="stylesheet" href="/css/shared.css" type="text/css" />
-        <link rel="stylesheet" href="/css/image360.css" type="text/css" />
+        <link rel="stylesheet" href="css/shared.css" type="text/css" />
+        <link rel="stylesheet" href="css/image360.css" type="text/css" />
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+        
+        <link rel="stylesheet" href="css/dropDown.css" type="text/css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <style>
         #panorama {
             width: 90%;
@@ -20,9 +23,17 @@
         <header>
             <h1>Un Viaggio Diverso Una Uguale Memoria</h1>
             <nav>
-                <a href="/images.html">Foto</a>
-                <a href="/index.html">Home</a>
-                <a href="/videos360.html">Video 360</a>
+                <a class="material-icons" href="/index.html">home</a>
+                <a href="images.html">Foto</a>
+                <a href="images360.html">Foto 360</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Video 360</button>
+                    <div class="dropdown-content">
+                        <a href="video360/1.html">Foto 360_1</a>
+                        <a href="video360/2.html">Foto 360_2</a>
+                        <a href="video360/3.html">Foto 360_3</a>
+                    </div>
+                </div>
                 <a href="#">Info</a>
             </nav>
             <div class="menu-btn-container" id="btn">
@@ -42,9 +53,9 @@
                 </a>
             </header>
             <nav>
-                <a href="/images.html">Foto</a>
-                <a href="/index.html">Home</a>
-                <a href="/videos360.html">Video 360</a>
+                <a href="images.html">Foto</a>
+                <a href="index.html">Home</a>
+                <a href="videos360.html">Video 360</a>
                 <a href="#">Info</a>
             </nav>
         </aside>
@@ -57,8 +68,8 @@
     <script>
         pannellum.viewer('panorama', {
             "type": "equirectangular",
-            "panorama": "/media/img/360/IMG_20230325_141051_00_029.jpg",
-            "preview": "/media/img/360/IMG_20230325_141051_00_029.jpg",
+            "panorama": "media/img/360/IMG_20230325_141051_00_029.jpg",
+            "preview": "media/img/360/IMG_20230325_141051_00_029.jpg",
             "autoLoad": true,
             "autoRotate": -2
         });
